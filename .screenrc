@@ -1,0 +1,7 @@
+term screen-256color
+termcapinfo xterm* ti@:te@
+vbell off
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %H(%l) %{..Y} %Y/%m/%d %c:%s "
+bindkey "^N" next
+bindkey "^P" prev
