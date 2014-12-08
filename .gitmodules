@@ -1,0 +1,3 @@
+[submodule "dougblack"]
+	path = dougblack
+	url = https://github.com/dougblack/dotfiles.git
