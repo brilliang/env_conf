@@ -20,17 +20,29 @@ else
     export EDITOR='mvim'
 fi
 
-if [ `uname` == 'Darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
+fi
+for p in "/usr/java/default" "/usr/java/latest"; do
+    if [ -d $p ]; then
+        export JAVA_HOME=$p
+    fi
+done
+if [ -n $JAVA_HOME ]; then
+    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 else
-    echo 'not mac system'
+    echo 'JAVA_HOME not set'
 fi
 
 export M2_HOME=/Users/zhuliang/program/apache/apache-maven-3.2.1/
-export PATH=$PATH:$M2_HOME/bin
+if [ -d $M2_HOME ]; then
+    export PATH=$PATH:$M2_HOME/bin
+fi
 
-export ANT_HOME="/Users/zhuliang/program/apache-ant-1.9.4/"
-export PATH=$PATH:$ANT_HOME/bin
+export ANT_HOME=/Users/zhuliang/program/apache-ant-1.9.4/
+if [ -d $ANT_HOME ]; then
+    export PATH=$PATH:$ANT_HOME/bin
+fi
 
 CODE_REPOS=/Users/zhuliang/dance/repos/
 ZL_PY_HOME=${CODE_REPOS}/pyutil/:${CODE_REPOS}/ss_lib/:${CODE_REPOS}/ss_thrift_gen/:${CODE_REPOS}:
