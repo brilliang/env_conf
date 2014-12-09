@@ -6,24 +6,12 @@ echo 'init in ~/.aliasrc'
 alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
 alias vzshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
-alias ssheva="ssh eva@42.96.157.54"
-alias sshali1="ssh zhuliang@121.42.48.15"
 
-alias sshj="ssh zhuliang@211.151.84.133"  # jump!23All
-alias sshmitm="ssh zhuliang@122.112.10.132"
+alias sl="screen -ls "
+alias sr="screen -r "
+alias sx="screen -x "
 
-alias sshyd="ssh zhuliang@101.251.192.186"
-
-alias sshha0="ssh zhuliang@101.251.192.178"
-alias sshha1="ssh zhuliang@101.251.192.179"
-alias sshha2="ssh zhuliang@101.251.192.180"
-alias sshha3="ssh zhuliang@101.251.192.181"
-alias sshha4="ssh zhuliang@101.251.192.182"
-alias sshmo="ssh zhuliang@101.251.192.183"
-alias sshmo1="ssh zhuliang@101.251.192.184"
-alias sshmo2="ssh zhuliang@101.251.192.185"
-
-
+alias s='ls -F'
 alias ls='ls -F '
 alias ll='ls -al'
 alias la='ls -a'
@@ -32,8 +20,22 @@ alias his='history '
 alias hisg='history | grep '
 alias grep='grep --color=auto'
 
-
 alias py='python '
-
 PYTHONPATH=''
 alias pyzl='export PYTHONPATH=$PYTHONPATH:/Users/zhuliang/dance/repos/:/Users/zhuliang/dance/repos/pyutil/:/Users/zhuliang/dance/repos/ss_thrift_gen python '
+
+alias ssheva="ssh eva@42.96.157.54"
+alias sshali1="ssh zhuliang@121.42.48.15"
+
+alias sshj="ssh zhuliang@211.151.84.133"  # jump!23All
+alias sshmitm="ssh zhuliang@122.112.10.132"
+
+alias sshyd="ssh zhuliang@101.251.192.186"
+alias sshha0="ssh zhuliang@101.251.192.178"
+alias sshha1="ssh zhuliang@101.251.192.179"
+alias sshha2="ssh zhuliang@101.251.192.180"
+alias sshha3="ssh zhuliang@101.251.192.181"
+alias sshha4="ssh zhuliang@101.251.192.182"
+alias sshmo="ssh zhuliang@101.251.192.183"
+alias sshmo1="ssh zhuliang@101.251.192.184"
+alias sshmo2="ssh zhuliang@101.251.192.185"
