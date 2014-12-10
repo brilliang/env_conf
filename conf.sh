@@ -39,6 +39,7 @@ for p in .zshrc .aliasrc .hashrc .screenrc .profile .gitconfig
 do
   mvf $GIT_CONF_DEP/$p $HOME_DIR
 done
+source $HOME_DIR/.zshrc
 
 for p in .vimrc .vim/
 do
