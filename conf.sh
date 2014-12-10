@@ -5,6 +5,7 @@ if [[ $GIT_CONF_DEP != *env_conf ]];then
   echo 'the script should run in env_conf dir'
   exit 0
 fi
+git submodule update --init --recursive
 
 cd ~
 HOME_DIR=`pwd`
@@ -35,16 +36,11 @@ do
 done
 
 # copy new conf files from git deposit
-for p in .zshrc .aliasrc .hashrc .screenrc .profile .gitconfig
+for p in .zshrc .aliasrc .hashrc .screenrc .profile .gitconfig .vimrc .vim/
 do
   mvf $GIT_CONF_DEP/$p $HOME_DIR
 done
 source $HOME_DIR/.zshrc
-
-for p in .vimrc .vim/
-do
-  mvf $GIT_CONF_DEP/dougblack/$p $HOME_DIR
-done
 
 for p in  $GIT_CONF_DEP/dougblack/ $GIT_CONF_DEP/
 do
