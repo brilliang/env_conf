@@ -5,7 +5,11 @@ if [[ $GIT_CONF_DEP != *env_conf ]];then
   echo 'the script should run in env_conf dir'
   exit 0
 fi
-git submodule update --init --recursive
+if [ "$(ls -A $GIT_CONF_DEP/dougblack)" ]; then
+  echo 'submodule already init.'
+else
+  git submodule update --init --recursive
+fi
 
 cd ~
 HOME_DIR=`pwd`
