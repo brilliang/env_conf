@@ -213,5 +213,7 @@ function! s:NextTextObject(motion, dir)
   exe "normal! ".a:dir.c."v".a:motion.c
 endfunction
 " }}}
-
+" autocmd {{{
+autocmd BufNewFile *.py  0r ~/.vim/template/python.tpl
+" }}}
 " vim:foldmethod=marker:foldlevel=0
