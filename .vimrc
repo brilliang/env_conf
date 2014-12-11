@@ -144,6 +144,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 " Custom Functions {{{
+map <F4> <Esc>:%!python -m json.tool<CR>  " 将F4映射成json格式化的功能键
+
 function! ToggleNumber()
     if(&relativenumber == 1)
         set norelativenumber
