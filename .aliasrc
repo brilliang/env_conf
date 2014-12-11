@@ -11,10 +11,11 @@ alias sl="screen -ls "
 alias sr="screen -r "
 alias sx="screen -x "
 
-alias s='ls -F'
-alias ls='ls -F '
-alias ll='ls -al'
-alias la='ls -a'
+alias s='ls -FG '
+alias ls='ls -FG '
+alias ll='ls -alFG'
+alias la='ls -aFG'
+alias lA='ls -AFG'
 
 alias his='history '
 alias hisg='history | grep '
