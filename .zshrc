@@ -53,5 +53,5 @@ CASE_SENSITIVE="true"
 plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.aliasrc
 source ~/.hashrc
+source ~/.aliasrc
