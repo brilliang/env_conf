@@ -217,5 +217,6 @@ endfunction
 " }}}
 " autocmd {{{
 autocmd BufNewFile *.py  0r ~/.vim/template/python.tpl
+autocmd BufNewFile *.html  0r ~/.vim/template/html.tpl
 " }}}
 " vim:foldmethod=marker:foldlevel=0
