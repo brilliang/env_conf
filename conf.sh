@@ -34,13 +34,13 @@ function mvf {
 }
 
 # move original configuration file into ~/conf.orig/ directory
-for p in .zshrc .aliasrc .hashrc .screenrc .profile .gitconfig .vimrc .vim/ .viminfo
+for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/ .viminfo
 do
   mvf $HOME_DIR/$p $ORIG_CONF_BCK
 done
 
 # copy new conf files from git deposit
-for p in .zshrc .aliasrc .hashrc .screenrc .profile .gitconfig .vimrc .vim/
+for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/
 do
   mvf $GIT_CONF_DEP/$p $HOME_DIR
 done
