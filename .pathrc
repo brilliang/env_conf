@@ -1,4 +1,4 @@
-echo 'init in ~/.profile'
+echo 'init in ~/.pathrc'
 # export PS1="[%n@%m:%~ %T]%#"
 # PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%1~ %{$reset_color%}%# "
 #RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
