@@ -1,4 +1,5 @@
 " Douglas Black
+au BufRead *.py map <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
 " Colors {{{
 syntax enable           " enable syntax processing
 colorscheme badwolf
