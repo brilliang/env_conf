@@ -1,0 +1,14 @@
+# pip install virtualenv
+# pip install virtualenvwrapper
+# http://www.nowamagic.net/academy/detail/1330228
+
+if [ `id -u` != '0' ]; then
+
+  export VIRTUALENV_USE_DISTRIBUTE=1        # <-- Always use pip/distribute
+  export WORKON_HOME=$HOME/.virtualenvs       # <-- Where all virtualenvs will be stored
+  source /usr/bin/virtualenvwrapper.sh
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+  export PIP_RESPECT_VIRTUALENV=true
+
+fi
+
