@@ -56,4 +56,4 @@ source $ZSH/oh-my-zsh.sh
 source ~/.hashrc
 source ~/.aliasrc
 source ~/.pathrc
-source ~/.virtualenvrc
+#source ~/.virtualenvrc
