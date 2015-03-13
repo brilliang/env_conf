@@ -11,11 +11,13 @@ alias sl="screen -ls "
 alias sr="screen -r "
 alias sx="screen -x "
 
-alias s='ls -FG '
-alias ls='ls -FG '
-alias ll='ls -alFG'
-alias la='ls -aFG'
-alias lA='ls -AFG'
+alias s='ls --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -al'
+alias la='ls -a'
+alias lA='ls -A'
+LS_COLORS='di=36:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
+export LS_COLORS
 
 alias his='history '
 alias hisg='history | grep '
