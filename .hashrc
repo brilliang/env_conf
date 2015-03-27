@@ -1,6 +1,2 @@
 echo 'init in ~/.hashrc'
-hash -d C="/Users/zhuliang/work/cuc"
-hash -d rep="/Users/zhuliang/dance/repos"
-hash -d pyutil="/Users/zhuliang/dance/repos/pyutil"
-hash -d ssad="/Users/zhuliang/dance/repos/ssad"
-hash -d ss_data="/Users/zhuliang/dance/repos/ss_data"
+hash -d work="$HOME/work/"
