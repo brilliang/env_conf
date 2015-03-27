@@ -51,3 +51,5 @@ alias pyzl='export PYTHONPATH=$ZL_PY_HOME;python '
 function test_sum() {
     echo $[ $1+ $2 ]
 }
+# for pyside libraryes
+export DYLD_LIBRARY_PATH=/Library/Python/2.7/site-packages/PySide/
