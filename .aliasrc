@@ -30,6 +30,7 @@ alias py='python '
 PYTHONPATH=''
 alias pyzl='export PYTHONPATH=$PYTHONPATH:/Users/zhuliang/dance/repos/:/Users/zhuliang/dance/repos/pyutil/:/Users/zhuliang/dance/repos/ss_thrift_gen python '
 
+# 好危险……更不要泄露出密码了…………
 alias ssheva="ssh eva@42.96.157.54"
 alias sshali1="ssh zhuliang@121.42.48.15"
 
@@ -45,3 +46,6 @@ alias sshha4="ssh zhuliang@101.251.192.182"
 alias sshmo="ssh zhuliang@101.251.192.183"
 alias sshmo1="ssh zhuliang@101.251.192.184"
 alias sshmo2="ssh zhuliang@101.251.192.185"
+
+alias mongoscrapy="mongo --shell localhost/scrapy /home/zhuliang/mongo_scrapy.js"
+alias mongoroot="mongo --shell localhost/admin /home/zhuliang/mongo_root.js"
