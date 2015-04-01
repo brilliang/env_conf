@@ -18,7 +18,13 @@ Plugin 'gmarik/Vundle.vim'
 "
 
 Plugin 'Yggdroot/indentLine'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdcommenter'
+
+" 括号补全 & 高亮匹配
+Plugin 'Raimondi/delimitMate'
+Plugin 'kien/rainbow_parentheses.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
