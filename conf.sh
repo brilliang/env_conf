@@ -55,6 +55,9 @@ source $HOME_DIR/.zshrc
 # 安装vundle管理的vim插件
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh
+
 
 # 因为 $GIT_CONF_DEP 中的文件被移开了，所以需要将deposit还原
 for p in  $GIT_CONF_DEP/dougblack/ $GIT_CONF_DEP/
