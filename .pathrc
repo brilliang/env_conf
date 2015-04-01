@@ -44,6 +44,9 @@ if [ -d $ANT_HOME ]; then
     export PATH=$PATH:$ANT_HOME/bin
 fi
 
+# for pyside libraryes
+export DYLD_LIBRARY_PATH=/Library/Python/2.7/site-packages/PySide/
+
 CODE_REPOS=/Users/zhuliang/dance/repos/
 ZL_PY_HOME=${CODE_REPOS}/pyutil/:${CODE_REPOS}/ss_lib/:${CODE_REPOS}/ss_thrift_gen/:${CODE_REPOS}:
 alias pyzl='export PYTHONPATH=$ZL_PY_HOME;python '
@@ -51,5 +54,36 @@ alias pyzl='export PYTHONPATH=$ZL_PY_HOME;python '
 function test_sum() {
     echo $[ $1+ $2 ]
 }
-# for pyside libraryes
-export DYLD_LIBRARY_PATH=/Library/Python/2.7/site-packages/PySide/
+
+function greps() {
+  if [ $# -eq 0 ];then
+    echo 'usage: sh $0 grep_exp0 grep_exp1 ...'
+    exit 1
+  fi
+
+  my_command="ps aux"
+  for cur_exp in $*
+  do
+    my_command="$my_command | grep $cur_exp"
+  done
+
+  #echo $my_command
+  eval $my_command
+}
+
+
+function grepakill() {
+  if [ $# -eq 0 ];then
+    echo 'usage: sh $0 grep_exp0 grep_exp1 ...'
+    exit 1
+  fi
+
+  my_command="ps aux"
+  for cur_exp in $*
+  do
+    my_command="$my_command | grep $cur_exp"
+  done
+  my_command="$my_command | awk '{print $2}' | xargs kill"
+  #echo $my_command
+  eval $my_command
+}
