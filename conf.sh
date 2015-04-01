@@ -52,6 +52,8 @@ do
 done
 
 source $HOME_DIR/.zshrc
+# 安装vundle管理的vim插件
+vim +PluginInstall +qall
 
 # 因为 $GIT_CONF_DEP 中的文件被移开了，所以需要将deposit还原
 for p in  $GIT_CONF_DEP/dougblack/ $GIT_CONF_DEP/
