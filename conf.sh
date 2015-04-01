@@ -63,7 +63,8 @@ cd ~/.vim/bundle/YouCompleteMe
 for p in  $GIT_CONF_DEP/dougblack/ $GIT_CONF_DEP/
 do
   cd $p
-  git reset --hard origin/master
+  #git reset --hard origin/master
+  git checkout .
 done
 
 cd $HOME_DIR/.oh-my-zsh
