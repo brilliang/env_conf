@@ -33,8 +33,10 @@ function mvf {
   fi
 }
 
-# 可以通过git reset 找到rm掉的文件
-rm $HOME_DIR/.oh-my-zsh/themes/crcandy.zsh-theme
+cd $HOME_DIR/.oh-my-zsh/
+git reset --hard origin/master
+
+rm $HOME_DIR/.oh-my-zsh/themes/crcandy.zsh-theme # 可以通过git reset 找到rm掉的文件
 cp $GIT_CONF_DEP/crcandy.zsh-theme $HOME_DIR/.oh-my-zsh/themes/crcandy.zsh-theme
 
 # move original configuration file into ~/conf.orig/ directory
@@ -57,3 +59,6 @@ do
   cd $p
   git reset --hard origin/master
 done
+
+cd $HOME_DIR/.oh-my-zsh
+git commit -am 'zl modified.'
