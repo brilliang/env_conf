@@ -18,8 +18,8 @@ Plugin 'gmarik/Vundle.vim'
 "
 
 Plugin 'Yggdroot/indentLine'
-" Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 
 " 括号补全 & 高亮匹配
