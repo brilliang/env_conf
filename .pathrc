@@ -83,7 +83,7 @@ function grepakill() {
   do
     my_command="$my_command | grep $cur_exp"
   done
-  my_command="$my_command | awk '{print $2}' | xargs kill"
+  my_command="$my_command | awk '{print \$2}' | xargs kill"
   #echo $my_command
   eval $my_command
 }
