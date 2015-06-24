@@ -22,8 +22,8 @@ alias ll='ls -al'
 alias la='ls -a'
 alias lA='ls -A'
 
-alias his='history '
-alias hisg='history | grep '
+alias his='fc -il '
+alias hisg='fc -il -1000 | grep '
 alias grep='grep --color=auto'
 
 alias py='python '
