@@ -57,3 +57,5 @@ source ~/.hashrc
 source ~/.aliasrc
 source ~/.pathrc
 #source ~/.virtualenvrc
+#
+bindkey "^b" beginning-of-line
