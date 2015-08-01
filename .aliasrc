@@ -7,9 +7,6 @@ alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
 alias vzshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
 
-alias sl="screen -ls "
-alias sr="screen -r "
-alias sx="screen -x "
 
 if [ `uname` = 'Darwin' ]; then
     export CLICOLOR=1
@@ -25,6 +22,12 @@ alias lA='ls -A'
 alias his='fc -il '
 alias hisg='fc -il -1000 | grep '
 alias grep='grep --color=auto'
+
+alias sl="screen -ls "
+alias sr="screen -r "
+alias sx="screen -x "
+
+alias vw='export LD_LIBRARY_PATH=/usr/local/lib; vw '
 
 alias py='python '
 PYTHONPATH=''
