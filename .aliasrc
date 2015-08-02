@@ -41,7 +41,7 @@ alias sshali1="ssh zhuliang@121.42.48.15"
 
 
 alias sshyd="ssh zhuliang@101.251.192.186"
-for ((i=178;i<=186;i++))
+for ((i=78;i<=86;i++))
 do
-    alias ssh$i="ssh zhuliang@101.251.192."$i
+    alias ssh$i="ssh zhuliang@101.251.192.1"$i
 done
