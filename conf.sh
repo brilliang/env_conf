@@ -1,4 +1,7 @@
 #!/bin/sh
+# make sure your git is updated!!
+
+set -e
 
 GIT_CONF_DEP=`pwd`
 if [[ $GIT_CONF_DEP != *env_conf ]];then
@@ -24,7 +27,7 @@ fi
 mkdir -p $ORIG_CONF_BCK
 echo mkdir -p $ORIG_CONF_BCK
 
-mvf() {
+mvf () {
   if [ -e $1 ];then
     mv $1 $2
     echo mv $1 $2
@@ -72,3 +75,4 @@ done
 
 cd $HOME_DIR/.oh-my-zsh
 git commit -am 'zl modified.'
+set +e
