@@ -24,7 +24,7 @@ fi
 mkdir -p $ORIG_CONF_BCK
 echo mkdir -p $ORIG_CONF_BCK
 
-function mvf {
+mvf() {
   if [ -e $1 ];then
     mv $1 $2
     echo mv $1 $2

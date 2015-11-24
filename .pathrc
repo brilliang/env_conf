@@ -5,8 +5,8 @@ echo 'init in ~/.pathrc'
 # export MANPATH="/usr/local/man:$MANPATH"
 # export MANPATH=/opt/local/share/man:$MANPATH
 
-export LC_ALL=zh_CN.UTF-8
-export LANG=zh_CN.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
