@@ -87,3 +87,13 @@ function grepakill() {
   #echo $my_command
   eval $my_command
 }
+
+
+function namegrep () {
+    if [ $# -ne 2 ];then
+        echo 'usage: namegrep file_name_pattern grep_reg_expr'
+        return 1
+    fi
+    find ./ -type f -name $1 -exec grep $2 {} \;
+}
+
