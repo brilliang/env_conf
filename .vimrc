@@ -26,6 +26,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kien/rainbow_parentheses.vim'
 
+" python code completion
+Plugin 'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 "
