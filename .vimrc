@@ -1,5 +1,8 @@
 " Douglas Black
 au BufRead *.py map <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
+map <F4> <Esc>:%!python -m json.tool<CR>  " 将F4映射成json格式化的功能键
+nmap <F8> :TagbarToggle<CR> 
+
 " Vundle {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -26,11 +29,15 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kien/rainbow_parentheses.vim'
 
-" python code completion
 Plugin 'davidhalter/jedi-vim'
+Plugin 'szw/vim-tags'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+let g:vim_tags_auto_generate = 1
+
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -196,7 +203,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 " Custom Functions {{{
-map <F4> <Esc>:%!python -m json.tool<CR>  " 将F4映射成json格式化的功能键
 
 function! ToggleNumber()
     if(&relativenumber == 1)
