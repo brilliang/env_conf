@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 # make sure your git is updated!!
 
 set -e
@@ -51,7 +51,7 @@ done
 # copy new conf files from git deposit
 for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/
 do
-  mvf $GIT_CONF_DEP/$p $HOME_DIR
+  cp -rf $GIT_CONF_DEP/$p $HOME_DIR
 done
 
 source $HOME_DIR/.zshrc
