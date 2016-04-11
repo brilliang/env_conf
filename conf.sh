@@ -56,9 +56,11 @@ do
   cp -rf $GIT_CONF_DEP/$p $HOME_DIR
 done
 echo "copy new conf files from git deposit"
+set +e
 
 source $HOME_DIR/.zshrc
 
+set -e
 # 安装vundle管理的vim插件
 echo "start set vundle plugins"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -82,3 +84,4 @@ cd $HOME_DIR/.oh-my-zsh
 git commit -am 'zl modified.'
 echo "All jobs done."
 set +e
+
