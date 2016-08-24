@@ -19,6 +19,9 @@ alias ll='ls -al'
 alias la='ls -a'
 alias lA='ls -A'
 
+alias bc='bc -l'
+alias wc='wc -l'
+
 alias his='fc -il '
 alias hisg='fc -il -1000 | grep '
 alias grep='grep --color=auto'
