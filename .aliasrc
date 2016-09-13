@@ -30,21 +30,6 @@ alias sl="screen -ls "
 alias sr="screen -r "
 alias sx="screen -x "
 
-alias vw='export LD_LIBRARY_PATH=/usr/local/lib; vw '
 
-alias py='python '
-PYTHONPATH=''
-alias pyzl='export PYTHONPATH=$PYTHONPATH:/Users/zhuliang/dance/repos/:/Users/zhuliang/dance/repos/pyutil/:/Users/zhuliang/dance/repos/ss_thrift_gen python '
-
-alias mongoscrapy="mongo --shell localhost/scrapy /home/zhuliang/mongo_scrapy.js"
-alias mongoroot="mongo --shell localhost/admin /home/zhuliang/mongo_root.js"
-
-# 好危险……更不要泄露出密码了…………
-alias sshali1="ssh zhuliang@121.42.48.15"
-
-
-alias sshyd="ssh zhuliang@101.251.192.186"
-for ((i=78;i<=86;i++))
-do
-    alias ssh$i="ssh zhuliang@101.251.192.1"$i
-done
+alias sshoff="ssh zhuliang@192.168.1.88"
+alias sshec2="ssh -i ~/gold-emr.pem ec2-user@ec2-54-242-137-176.compute-1.amazonaws.com"
