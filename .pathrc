@@ -97,3 +97,6 @@ function namegrep () {
     find ./ -type f -name $1 -exec grep $2 {} \;
 }
 
+function dated () {
+    date -r $[$1*86400]
+}
