@@ -2,19 +2,6 @@
 # make sure your git is updated!!
 
 set -e
-
-GIT_CONF_DEP=`pwd`
-if [[ $GIT_CONF_DEP != *env_conf ]];then
-  echo 'the script should run in env_conf dir'
-  exit 0
-fi
-if [ "$(ls -A $GIT_CONF_DEP/dougblack)" ]; then
-  echo 'submodule already init.'
-else
-  git submodule update --init --recursive
-  echo 'submodule update OK'
-fi
-
 cd ~
 HOME_DIR=`pwd`
 ORIG_CONF_BCK="$HOME_DIR/conf.orig"
@@ -28,12 +15,22 @@ fi
 mkdir -p $ORIG_CONF_BCK
 echo "mkdir -p $ORIG_CONF_BCK"
 
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+GIT_CONF_DEP=`pwd`
+if [ "$(ls -A $GIT_CONF_DEP/dougblack)" ]; then
+  echo 'submodule already init.'
+else
+  git submodule update --init --recursive
+  echo 'submodule update OK'
+fi
+
 mvf () {
   if [ -e $1 ];then
     mv $1 $2
     echo "mv $1 $2"
   else
-    echo "$1 not exist"
+    echo "$1 not exist, no need to move"
   fi
 }
 
