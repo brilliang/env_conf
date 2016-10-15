@@ -33,3 +33,53 @@ alias sx="screen -x "
 
 alias sshoff="ssh zhuliang@192.168.1.88"
 alias sshec2="ssh -i ~/gold-emr.pem ec2-user@ec2-54-242-137-176.compute-1.amazonaws.com"
+
+function cl () {
+    cd $@; ls ./
+}
+
+function greps() {
+  if [ $# -eq 0 ];then
+    echo 'usage: sh $0 grep_exp0 grep_exp1 ...'
+    exit 1
+  fi
+
+  my_command="ps aux"
+  for cur_exp in $*
+  do
+    my_command="$my_command | grep $cur_exp"
+  done
+
+  #echo $my_command
+  eval $my_command
+}
+
+
+function grepakill() {
+  if [ $# -eq 0 ];then
+    echo 'usage: sh $0 grep_exp0 grep_exp1 ...'
+    exit 1
+  fi
+
+  my_command="ps aux"
+  for cur_exp in $*
+  do
+    my_command="$my_command | grep $cur_exp"
+  done
+  my_command="$my_command | awk '{print \$2}' | xargs kill"
+  #echo $my_command
+  eval $my_command
+}
+
+
+function namegrep () {
+    if [ $# -ne 2 ];then
+        echo 'usage: namegrep file_name_pattern grep_reg_expr'
+        return 1
+    fi
+    find ./ -type f -name $1 -exec grep $2 {} \;
+}
+
+function dated () {
+    date -r $[$1*86400]
+}
