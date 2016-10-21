@@ -50,7 +50,7 @@ echo "move original configuration file into ~/conf.orig/ directory"
 
 for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/
 do
-  cp -rf $GIT_CONF_DEP/$p $HOME_DIR
+  cp -rf $GIT_CONF_DEP/$p $HOME_DIR/$p
 done
 echo "copy new conf files from git deposit"
 set +e
