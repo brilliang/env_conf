@@ -3,19 +3,6 @@
 
 set -x
 set -e
-cd ~
-HOME_DIR=`pwd`
-ORIG_CONF_BCK="$HOME_DIR/conf.orig"
-
-if [ -d $ORIG_CONF_BCK ];then
-  echo '$ORIG_CONF_BCK exist. pls clean it.'
-  exit 1
-fi
-
-# make the deposit for old conf files
-mkdir -p $ORIG_CONF_BCK
-echo "mkdir -p $ORIG_CONF_BCK"
-
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 GIT_CONF_DEP=`pwd`
@@ -26,6 +13,14 @@ else
   echo 'submodule update OK'
 fi
 
+ORIG_CONF_BCK="$HOME/conf.orig"
+if [ -d $ORIG_CONF_BCK ];then
+  echo '$ORIG_CONF_BCK exist. pls clean it.'
+  exit 1
+fi
+# make the deposit for old conf files
+mkdir -p $ORIG_CONF_BCK
+
 mvf () {
   if [ -e $1 ];then
     mv $1 $2
@@ -35,28 +30,28 @@ mvf () {
   fi
 }
 
-cd $HOME_DIR/.oh-my-zsh/
+cd $HOME/.oh-my-zsh/
 git reset --hard origin/master
 echo "reset .oh-my-zsh"
 
-rm $HOME_DIR/.oh-my-zsh/themes/crcandy.zsh-theme # 可以通过git reset 找到rm掉的文件
-cp $GIT_CONF_DEP/crcandy.zsh-theme $HOME_DIR/.oh-my-zsh/themes/crcandy.zsh-theme
+rm $HOME/.oh-my-zsh/themes/crcandy.zsh-theme # 可以通过git reset 找到rm掉的文件
+cp $GIT_CONF_DEP/crcandy.zsh-theme $HOME/.oh-my-zsh/themes/crcandy.zsh-theme
 echo "set crcandy.zsh-theme"
 
 for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/ .viminfo
 do
-  mvf $HOME_DIR/$p $ORIG_CONF_BCK
+  mvf $HOME/$p $ORIG_CONF_BCK
 done
 echo "move original configuration file into ~/conf.orig/ directory"
 
 for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/
 do
-  cp -rf $GIT_CONF_DEP/$p $HOME_DIR/$p
+  cp -rf $GIT_CONF_DEP/$p $HOME/$p
 done
 echo "copy new conf files from git deposit"
 set +e
 
-source $HOME_DIR/.zshrc
+source $HOME/.zshrc
 
 set -e
 # 安装vundle管理的vim插件
@@ -78,7 +73,7 @@ do
   git checkout .
 done
 
-cd $HOME_DIR/.oh-my-zsh
+cd $HOME/.oh-my-zsh
 git commit -am 'zl modified.'
 echo "All jobs done."
 set +e
