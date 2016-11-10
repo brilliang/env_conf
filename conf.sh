@@ -1,6 +1,7 @@
 #!/bin/zsh
 # make sure your git is updated!!
 
+set -x
 set -e
 cd ~
 HOME_DIR=`pwd`
