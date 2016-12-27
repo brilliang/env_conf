@@ -56,6 +56,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.hashrc
 source ~/.aliasrc
 source ~/.pathrc
-#source ~/.virtualenvrc
-#
-bindkey "^b" beginning-of-line
+
+
+# yum groupinstall "Development Tools"
+# apt-get install build-essential
