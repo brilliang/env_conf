@@ -83,3 +83,14 @@ function namegrep () {
 function dated () {
     date -r $[$1*86400]
 }
+
+function download2here () {
+   if [ $# -ne 2 ];then
+        echo 'usage: download2here bucket_name key'
+        return 1
+    fi
+    bucket_name=$1
+    object_key=$2
+
+    aws --profile production s3 ls s3://${bucket_name}/${object_key}  --recursive | awk -v b=${bucket_name} '{print "aws --profile production s3 cp s3://"b"/"$4" ./"}' | /usr/local/bin/parallel
+}
