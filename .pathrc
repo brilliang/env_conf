@@ -33,14 +33,3 @@ if [ -n $JAVA_HOME ]; then
 else
     echo 'JAVA_HOME not set'
 fi
-
-export M2_HOME=/Users/zhuliang/program/apache/apache-maven-3.2.1/
-if [ -d $M2_HOME ]; then
-    export PATH=$PATH:$M2_HOME/bin
-fi
-
-export ANT_HOME=/Users/zhuliang/program/apache-ant-1.9.4/
-if [ -d $ANT_HOME ]; then
-    export PATH=$PATH:$ANT_HOME/bin
-fi
-
