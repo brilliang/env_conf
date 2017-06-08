@@ -1,7 +1,7 @@
 #!/bin/zsh
 # make sure your git is updated!!
 
-set -x
+#set -x
 set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"

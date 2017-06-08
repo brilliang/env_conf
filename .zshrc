@@ -57,6 +57,7 @@ source ~/.hashrc
 source ~/.aliasrc
 source ~/.pathrc
 
+setopt no_nomatch
 
 # yum groupinstall "Development Tools"
 # apt-get install build-essential
