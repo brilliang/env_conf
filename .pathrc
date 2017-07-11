@@ -1,35 +1,40 @@
 echo 'init in ~/.pathrc'
-# export PS1="[%n@%m:%~ %T]%#"
-# PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%1~ %{$reset_color%}%# "
-#RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
-# export MANPATH="/usr/local/man:$MANPATH"
-# export MANPATH=/opt/local/share/man:$MANPATH
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export EDITOR='vim'
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-# ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='vim'
-fi
+function load_java_home {
 
-if [ `uname` = 'Darwin' ]; then
-    export JAVA_HOME=`/usr/libexec/java_home`
-fi
-for p in "/usr/java/default" "/usr/java/latest"; do
-    if [ -d $p ]; then
-        export JAVA_HOME=$p
+    if [ `uname` = 'Darwin' ]; then
+        export JAVA_HOME=`/usr/libexec/java_home`
+        return 0
     fi
-done
-if [ -n $JAVA_HOME ]; then
-    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-else
+
+    for p in "/usr/java/default" "/usr/java/latest"; do
+        if [ -d $p ]; then
+            export JAVA_HOME=$p
+            return 0
+        fi
+    done
+
+    javac_link_path=`which javac`
+    javac_path=`readlink -f $javac_link_path`
+    if ! [ -z "${javac_path// }" ]; then
+        JAVA_HOME=$javac_path
+        return 0
+    fi
+
+    return 1
+}
+
+load_java_home
+
+if [ -z "${JAVA_HOME// }" ]; then
     echo 'JAVA_HOME not set'
+else
+    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+    echo 'set CLASSPATH='$CLASSPATH
 fi
+
