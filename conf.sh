@@ -4,6 +4,14 @@
 #set -x
 set -e
 
+# install oh-my-zsh first
+[ ! -d $HOME/.oh-my-zsh/ ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# the deposit for old conf files
+ORIG_CONF_BCK="$HOME/conf.orig"
+[ -d $ORIG_CONF_BCK ] && rm -rf $ORIG_CONF_BCK
+mkdir -p $ORIG_CONF_BCK
+
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 GIT_CONF_DEP=`pwd`
 if [ "$(ls -A $GIT_CONF_DEP/dougblack)" ]; then
@@ -12,14 +20,6 @@ else
   git submodule update --init --recursive
   echo 'submodule update OK'
 fi
-
-ORIG_CONF_BCK="$HOME/conf.orig"
-if [ -d $ORIG_CONF_BCK ];then
-  echo '$ORIG_CONF_BCK exist. pls clean it.'
-  exit 1
-fi
-# make the deposit for old conf files
-mkdir -p $ORIG_CONF_BCK
 
 mvf () {
   if [ -e $1 ];then
