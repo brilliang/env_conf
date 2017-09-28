@@ -27,7 +27,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 " 括号补全 & 高亮匹配
 Plugin 'Raimondi/delimitMate'
-Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'davidhalter/jedi-vim'
 Plugin 'szw/vim-tags'
@@ -154,10 +154,10 @@ let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'do
 " }}}
 
 " Rainbow Parentheses {{{
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 " }}}
 
 " Syntastic {{{
