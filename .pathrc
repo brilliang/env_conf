@@ -44,3 +44,6 @@ if [ -d "${HOME}/.pyenv/" ]; then
     eval "$(pyenv virtualenv-init -)"
     echo 'set up pyenv'
 fi
+if which pyenv-virtualenv-init > /dev/null; then 
+    eval "$(pyenv virtualenv-init -)"; 
+fi
