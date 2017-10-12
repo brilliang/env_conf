@@ -56,6 +56,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.hashrc
 source ~/.aliasrc
 source ~/.pathrc
+source ~/.variables
 
 setopt no_nomatch
 
