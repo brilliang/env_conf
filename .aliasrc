@@ -17,6 +17,8 @@ else
 fi
 
 alias counts="sort | uniq -c | sort -n -r"
+alias zcat="gunzip -c"
+
 alias ll='ls -al'
 alias la='ls -a'
 alias lA='ls -A'
