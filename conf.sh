@@ -38,13 +38,13 @@ rm $HOME/.oh-my-zsh/themes/crcandy.zsh-theme # 可以通过git reset 找到rm掉
 cp $GIT_CONF_DEP/crcandy.zsh-theme $HOME/.oh-my-zsh/themes/crcandy.zsh-theme
 echo "set crcandy.zsh-theme"
 
-for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/ .viminfo
+for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .variables .gitconfig .vimrc .vim/ .viminfo
 do
   mvf $HOME/$p $ORIG_CONF_BCK
 done
 echo "move original configuration file into ~/conf.orig/ directory"
 
-for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .gitconfig .vimrc .vim/
+for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .variables .gitconfig .vimrc .vim/ 
 do
   cp -rf $GIT_CONF_DEP/$p $HOME/$p
 done
@@ -66,15 +66,6 @@ fi
 
 
 # 因为 $GIT_CONF_DEP 中的文件被移开了，所以需要将deposit还原
-for p in  $GIT_CONF_DEP/ 
-do
-  cd $p
-  #git reset --hard origin/master
-  git checkout .
-done
-
-cd $HOME/.oh-my-zsh
-git commit -am 'zl modified.'
 echo "All jobs done."
 set +e
 
