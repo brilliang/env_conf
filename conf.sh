@@ -1,9 +1,6 @@
 #!/bin/zsh
 # make sure your git is updated!!
 
-#set -x
-set -e
-
 # install oh-my-zsh first
 [ ! -d $HOME/.oh-my-zsh/ ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -52,6 +49,12 @@ echo "copy new conf files from git deposit"
 set +e
 
 source $HOME/.zshrc
+
+if [ "$(uname)" == "Darwin" ];then
+  echo "it is a Mac"
+  brew install the_silver_searcher
+  brew install autojump
+fi
 
 set -e
 # 安装vundle管理的vim插件
