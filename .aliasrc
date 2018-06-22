@@ -26,11 +26,12 @@ alias lA='ls -A'
 alias bc='bc -l'
 alias wc='wc -l'
 
-alias grep='ag'
+alias grep='ag '
 alias his='fc -il '
 alias hisg='fc -il -1000 | grep '
 
 alias tree='tree -N '
+alias py3="python3 "
 
 alias sl="screen -ls "
 alias sr="screen -r "
