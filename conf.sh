@@ -51,10 +51,10 @@ set +e
 
 source $HOME/.zshrc
 
-if [ "$(uname)" == "Darwin" ];then
+if [ "$(uname)" -eq "Darwin" ];then
   echo "it is a Mac"
-  brew install the_silver_searcher
-  brew install autojump
+  command -v ag || brew install the_silver_searcher
+  command -v j || brew install autojump
 fi
 
 set -e
