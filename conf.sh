@@ -34,6 +34,7 @@ echo "reset .oh-my-zsh"
 rm $HOME/.oh-my-zsh/themes/crcandy.zsh-theme # 可以通过git reset 找到rm掉的文件
 cp $GIT_CONF_DEP/crcandy.zsh-theme $HOME/.oh-my-zsh/themes/crcandy.zsh-theme
 echo "set crcandy.zsh-theme"
+git commit -am 'use my crcandy.zsh-theme'
 
 for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .variables .gitconfig .vimrc .vim/ .viminfo
 do
