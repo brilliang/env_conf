@@ -56,6 +56,13 @@ if [ "$(uname)" -eq "Darwin" ];then
   command -v ag || brew install the_silver_searcher
   command -v j || brew install autojump
 fi
+command -v yum
+if [ "$?" != "0" ]; then
+  command -v ag || yum install the_silver_searcher
+  command -v j || yum install autojump-zsh
+fi
+
+
 
 set -e
 # 安装vundle管理的vim插件
