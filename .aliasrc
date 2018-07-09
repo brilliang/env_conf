@@ -31,7 +31,7 @@ alias his='fc -il '
 alias hisg='fc -il -1000 | grep '
 
 alias tree='tree -N '
-alias py3="python3 "
+alias p3="python3 "
 
 alias sl="screen -ls "
 alias sr="screen -r "
