@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 set -x
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
