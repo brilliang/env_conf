@@ -55,6 +55,9 @@ if [ "$(uname)" -eq "Darwin" ];then
   echo "it is a Mac"
   command -v ag || brew install the_silver_searcher
   command -v j || brew install autojump
+  command -v subl || brew cask install sublime-text
+  # brew cask install manico
+  # brew cask install spectacle
 fi
 command -v yum
 if [ "$?" != "0" ]; then
