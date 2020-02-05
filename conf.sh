@@ -52,7 +52,7 @@ set +e
 
 source $HOME/.zshrc
 
-if [ "$(uname)" -eq "Darwin" ];then
+if [ "$(uname)" == "Darwin" ];then
   echo "it is a Mac"
   # install homebrew
   command -v brew || mkdir $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew && echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
