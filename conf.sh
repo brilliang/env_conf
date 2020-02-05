@@ -63,7 +63,7 @@ if [ "$(uname)" == "Darwin" ];then
   command -v j || brew install autojump
   command -v subl || brew cask install sublime-text
   # brew cask install manico
-  # brew cask install spectacle
+  # brew cask install rectangle
 fi
 command -v yum
 if [ "$?" != "0" ]; then
