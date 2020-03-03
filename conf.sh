@@ -62,8 +62,12 @@ if [ "$(uname)" == "Darwin" ];then
   command -v ag || brew install the_silver_searcher
   command -v j || brew install autojump
   command -v subl || brew cask install sublime-text
-  # brew cask install manico
-  # brew cask install rectangle
+  
+  brew cask list iterm2 || brew cask install iterm2
+  brew cask list manico || brew cask install manico
+  brew cask list caffine || brew cask install caffeine
+  brew cask list rectangle || brew cask install rectangle
+
 fi
 command -v yum
 if [ "$?" != "0" ]; then
