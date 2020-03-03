@@ -65,7 +65,7 @@ if [ "$(uname)" == "Darwin" ];then
   
   brew cask list iterm2 || brew cask install iterm2
   brew cask list manico || brew cask install manico
-  brew cask list caffine || brew cask install caffeine
+  # brew cask list caffine || brew cask install caffeine # download Caffeinated.app from App Store 
   brew cask list rectangle || brew cask install rectangle
 
 fi
