@@ -4,6 +4,27 @@
 # install oh-my-zsh first
 [ ! -d $HOME/.oh-my-zsh/ ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# install necessary software
+if [ "$(uname)" == "Darwin" ];then
+  echo "it is a Mac"
+  # install homebrew to a local directory
+  command -v brew || mkdir $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew && echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
+  source $HOME/.zshrc
+  brew update
+
+  command -v ag || brew install the_silver_searcher
+  command -v j || brew install autojump
+  command -v subl || brew cask install sublime-text
+  
+  brew cask list iterm2 || brew cask install iterm2
+  brew cask list hammerspoon || brew cask install hammerspoon
+fi
+command -v yum
+if [ "$?" != "0" ]; then
+  command -v ag || yum install the_silver_searcher
+  command -v j || yum install autojump-zsh
+fi
+
 
 # the deposit for old conf files
 ORIG_CONF_BCK="$HOME/conf.orig"
@@ -43,7 +64,7 @@ do
 done
 echo "move original configuration file into ~/conf.orig/ directory"
 
-for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .variables .gitconfig .vimrc .vim/ 
+for p in .zshrc .aliasrc .hashrc .screenrc .pathrc .variables .gitconfig .vimrc .vim/ .hammerspoon/
 do
   cp -rf $GIT_CONF_DEP/$p $HOME/$p
 done
@@ -51,30 +72,6 @@ echo "copy new conf files from git deposit"
 set +e
 
 source $HOME/.zshrc
-
-if [ "$(uname)" == "Darwin" ];then
-  echo "it is a Mac"
-  # install homebrew
-  command -v brew || mkdir $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew && echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
-  source $HOME/.zshrc
-  brew update
-
-  command -v ag || brew install the_silver_searcher
-  command -v j || brew install autojump
-  command -v subl || brew cask install sublime-text
-  
-  brew cask list iterm2 || brew cask install iterm2
-  brew cask list manico || brew cask install manico
-  # brew cask list caffine || brew cask install caffeine # download Caffeinated.app from App Store 
-  brew cask list rectangle || brew cask install rectangle
-
-fi
-command -v yum
-if [ "$?" != "0" ]; then
-  command -v ag || yum install the_silver_searcher
-  command -v j || yum install autojump-zsh
-fi
-
 
 
 set -e
