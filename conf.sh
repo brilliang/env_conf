@@ -57,7 +57,7 @@ source $HOME/.zshrc
 if [ "$(uname)" == "Darwin" ];then
   echo "it is a Mac"
   # install homebrew to a local directory
-  command -v brew || mkdir $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew && echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
+  command -v brew || mkdir -p $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew && echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
   source $HOME/.zshrc
   brew update
 
