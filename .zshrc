@@ -61,5 +61,3 @@ source ~/.variables
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 setopt no_nomatch
 
-# yum groupinstall "Development Tools"
-# apt-get install build-essential

@@ -71,10 +71,11 @@ if [ "$(uname)" == "Darwin" ];then
 fi
 command -v yum
 if [ "$?" != "0" ]; then
+  yum groupinstall "Development Tools"
   command -v ag || yum install the_silver_searcher
   command -v j || yum install autojump-zsh
 fi
-
+# apt-get install build-essential
 
 set -e
 # 安装vundle管理的vim插件
