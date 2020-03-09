@@ -57,9 +57,15 @@ source $HOME/.zshrc
 if [ "$(uname)" == "Darwin" ];then
   echo "it is a Mac"
   # install homebrew to a local directory
-  command -v brew || mkdir -p $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew && echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
-  source $HOME/.zshrc
-  brew update
+  command -v brew
+  if [ "$?" != "0" ]; then
+    if [ ! -d $HOME/.brew ]; then
+      mkdir $HOME/.brew && git clone https://github.com/Homebrew/brew $HOME/.brew
+    fi
+    echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> $HOME/.zshrc
+    source $HOME/.zshrc
+    brew update
+  fi
 
   command -v ag || brew install the_silver_searcher
   command -v j || brew install autojump
