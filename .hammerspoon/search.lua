@@ -14,6 +14,6 @@ end
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
     hs.focus()
-    botton, input = hs.dialog.textPrompt("google search", "google search", hs.pasteboard.getContents())
-    hs.urlevent.openURL("https://www.google.com/search?q=" .. urlencode(input))
+    botton, input = hs.dialog.textPrompt("inner search", "bunnylol", hs.pasteboard.getContents())
+    hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
 end)
