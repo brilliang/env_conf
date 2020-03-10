@@ -12,7 +12,7 @@ local function urlencode(url)
   return url
 end
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "B", function()
     hs.focus()
     botton, input = hs.dialog.textPrompt("inner search", "bunnylol", hs.pasteboard.getContents())
     hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
