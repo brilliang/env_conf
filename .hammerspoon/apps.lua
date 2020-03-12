@@ -1,5 +1,5 @@
 apps = {
-    {{"alt"}, "F", "Finder"},
+    {{"alt"}, "E", "Finder"},
     {{"alt"}, "S", "Safari"},
     {{"alt"}, "C", "Google Chrome"},
     {{"alt"}, "O", "Microsoft Outlook"},
