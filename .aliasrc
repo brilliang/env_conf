@@ -99,3 +99,5 @@ function download2here () {
 
     aws --profile production s3 ls s3://${bucket_name}/${object_key}  --recursive | awk -v b=${bucket_name} '{print "aws --profile production s3 cp s3://"b"/"$4" ./"}' | /usr/local/bin/parallel
 }
+
+alias cfb="code-fb-insiders"
