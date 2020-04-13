@@ -9,6 +9,7 @@ apps = {
     {{"alt"}, "D", "Dash"},
     {{"alt"}, "V", "VS Code @ FB - Insiders"},
     {{"alt", "ctrl"}, "Q", "Quip"},
+    {{"alt", "ctrl"}, "R", "Reminders"},
 
     {{"alt", "ctrl"}, "W", "Workplace Chat"},
     {{"alt", "ctrl"}, "P", "WhatsApp"},
@@ -16,11 +17,16 @@ apps = {
 
 for i = 1, #apps do
     hs.hotkey.bind(apps[i][1], apps[i][2], function() 
-        focusd_app = hs.window.focusedWindow():application()
-        if focusd_app == nil or focusd_app:name() ~= apps[i][3] then
-            hs.application.open(apps[i][3]) 
+        if hs.window.focusedWindow() == nil then
+            hs.application.open(apps[i][3])
+
         else
-            focusd_app:hide()
+            focusd_app = hs.window.focusedWindow():application()
+            if focusd_app == nil or focusd_app:name() ~= apps[i][3] then
+                hs.application.open(apps[i][3]) 
+            else
+                focusd_app:hide()
+            end
         end
     end)
 end
