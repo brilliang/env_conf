@@ -51,14 +51,13 @@ if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"; 
 fi
 
-
 if [[ "$(uname)" -eq "Darwin" ]]; then
-    autojump_conf="`brew --prefix`/etc/autojump.sh"
+    autojump_conf=`brew --prefix`"/etc/autojump.sh"
     if [[ -s $autojump_conf ]]; then
         source $autojump_conf
+        echo 'source autujump config: '$autojump_conf
     else
-        echo 'autojump config not found!'
+        echo 'autojump config not found at: '$autojump_conf
     fi
 fi
 
-# [[ "$(uname)" -eq "Darwin" ]] && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
