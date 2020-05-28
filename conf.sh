@@ -67,8 +67,9 @@ if [ "$(uname)" == "Darwin" ];then
     brew update
   fi
 
-  command -v ag || brew install the_silver_searcher
   command -v j || brew install autojump
+  command -v ag || brew install the_silver_searcher
+  command -v jq || brew install jq
   command -v subl || brew cask install sublime-text
   
   brew cask list iterm2 || brew cask install iterm2
