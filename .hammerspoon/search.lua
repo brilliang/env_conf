@@ -24,15 +24,15 @@ hs.hotkey.bind({"shift", "ctrl"}, "T", function()
     botton, input = hs.dialog.textPrompt("Google Translate", "translate", hs.pasteboard.getContents():match("^%s*(.-)%s*$"))
     local log = hs.logger.new('g-translate','debug')
     log:w("search input:\"" .. input .. "\". first byte index " .. input:byte())
+    
+    local sl = "en"
+    local tl = "zh-CN"  -- case sensitive
     if input:byte() >= 127 then
-        sl = "zh-CN"
+        sl = "auto"
         tl = "en"
-    else
-        sl = "en"
-        tl = "zh-CN"
     end
     
-    go_url = "https://translate.google.com/?text=" .. urlencode(input) .. "#view=home&op=translate&sl=" .. sl .. "&tl=" .. tl .. "&text=" .. urlencode(input)
+    go_url = string.format("https://translate.google.com/#view=home&op=translate&sl=%s&tl=%s&text=%s", sl, tl, urlencode(input))
     log:w("url=" .. go_url)
     hs.urlevent.openURL(go_url)
 end)
