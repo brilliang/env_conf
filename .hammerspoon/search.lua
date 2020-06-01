@@ -14,14 +14,40 @@ end
 
 hs.hotkey.bind({"shift", "ctrl"}, "B", function()
     hs.focus()
-    botton, input = hs.dialog.textPrompt("inner search", "bunnylol", hs.pasteboard.getContents():match("^%s*(.-)%s*$"))
-    hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
+
+    local content = hs.pasteboard.getContents()
+    if content ~= nil and content ~= "" then
+        content = content:match("^%s*(.-)%s*$")
+    end
+
+    button, input = hs.dialog.textPrompt(
+        "bunnylol", "Facebook inner search", 
+        content,
+        "OK", "Cancel"
+    )
+    if button == "OK" then
+        hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
+    end
 end)
 
 
-hs.hotkey.bind({"shift", "ctrl"}, "T", function()
+hs.hotkey.bind({"shift", "ctrl"}, "J", function()
     hs.focus()
-    botton, input = hs.dialog.textPrompt("Google Translate", "translate", hs.pasteboard.getContents():match("^%s*(.-)%s*$"))
+
+    local content = hs.pasteboard.getContents()
+    if content ~= nil and content ~= "" then
+        content = content:match("^%s*(.-)%s*$")
+    end
+
+    button, input = hs.dialog.textPrompt(
+        "Google Translate", "translate", 
+        content,
+        "OK", "Cancel"
+    )
+    if button == 'Cancel' then
+        do return end
+    end
+
     local log = hs.logger.new('g-translate','debug')
     log:w("search input:\"" .. input .. "\". first byte index " .. input:byte())
     
