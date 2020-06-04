@@ -18,6 +18,8 @@ hs.hotkey.bind({"shift", "ctrl"}, "B", function()
     local content = hs.pasteboard.getContents()
     if content ~= nil and content ~= "" then
         content = content:match("^%s*(.-)%s*$")
+    else
+        content = ""
     end
 
     button, input = hs.dialog.textPrompt(
@@ -37,6 +39,8 @@ hs.hotkey.bind({"shift", "ctrl"}, "J", function()
     local content = hs.pasteboard.getContents()
     if content ~= nil and content ~= "" then
         content = content:match("^%s*(.-)%s*$")
+    else
+        content = ""
     end
 
     button, input = hs.dialog.textPrompt(
