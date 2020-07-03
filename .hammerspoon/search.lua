@@ -1,3 +1,31 @@
+local bunny_keywords = {"cal", "task", "tasks", "diff"}
+
+local function Set (list)
+  local set = {}
+  for _, l in ipairs(list) do set[l] = true end
+  return set
+end
+
+local bk = Set(bunny_keywords)
+
+
+local function is_bunny_search(input)
+    if (
+            bk[input] == true
+            or string.match(input, "^[fFtTdD]%d+$")
+            or string.match(input, "^[is]%s%w+")
+            or string.match(input, "^.?gbs%s%w+")
+        ) then
+        return true
+    end
+
+    return false
+end
+
+
+----------------------
+ 
+
 local char_to_hex = function(c)
   return string.format("%%%02X", string.byte(c))
 end
@@ -12,7 +40,11 @@ local function urlencode(url)
   return url
 end
 
-hs.hotkey.bind({"shift", "ctrl"}, "B", function()
+
+----------------------
+ 
+
+hs.hotkey.bind({"ctrl", "cmd"}, "S", function()
     hs.focus()
 
     local content = hs.pasteboard.getContents()
@@ -28,7 +60,11 @@ hs.hotkey.bind({"shift", "ctrl"}, "B", function()
         "OK", "Cancel"
     )
     if button == "OK" then
-        hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
+        if is_bunny_search(input) then
+            hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
+        else
+            hs.urlevent.openURL("https://www.google.com/search?ie=UTF-8&q=" .. urlencode(input))
+        end
     end
 end)
 
