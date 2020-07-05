@@ -1,4 +1,4 @@
-local bunny_keywords = {"cal", "task", "tasks", "diff"}
+local bunny_keywords = {"cal", "wp", "chat", "task", "tasks", "diff"}
 
 local function Set (list)
   local set = {}
@@ -12,7 +12,7 @@ local bk = Set(bunny_keywords)
 local function is_bunny_search(input)
     if (
             bk[input] == true
-            or string.match(input, "^[fFtTdD]%d+$")
+            or string.match(input, "^[fFtTdDnN]%d+$")
             or string.match(input, "^[is]%s%w+")
             or string.match(input, "^.?gbs%s%w+")
         ) then
@@ -69,7 +69,7 @@ hs.hotkey.bind({"ctrl", "cmd"}, "S", function()
 end)
 
 
-hs.hotkey.bind({"shift", "ctrl"}, "J", function()
+hs.hotkey.bind({"ctrl", "cmd"}, "J", function()
     hs.focus()
 
     local content = hs.pasteboard.getContents()
