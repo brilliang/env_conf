@@ -1,4 +1,4 @@
-local bunny_keywords = {"cal", "wp", "chat", "task", "tasks", "diff"}
+local bunny_keywords = {"cal", "wp", "chat", "task", "tasks", "diff", "qrt2", "daiquery", "scuba", "v0"}
 
 local function Set (list)
   local set = {}
@@ -20,6 +20,14 @@ local function is_bunny_search(input)
     end
 
     return false
+end
+
+local function is_web_url(input)
+    if string.match(input, "^%s*[hH][tT][tT][pP][sS]?://") then
+        return true
+    else
+        return false
+    end
 end
 
 
@@ -60,13 +68,18 @@ hs.hotkey.bind({"ctrl", "cmd"}, "S", function()
         "OK", "Cancel"
     )
     if button == "OK" then
-        if is_bunny_search(input) then
+        if is_web_url(input) then
+            hs.urlevent.openURL(input)
+        elseif is_bunny_search(input) then
             hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
         else
             hs.urlevent.openURL("https://www.google.com/search?ie=UTF-8&q=" .. urlencode(input))
         end
     end
 end)
+
+
+----------------------
 
 
 hs.hotkey.bind({"ctrl", "cmd"}, "J", function()
