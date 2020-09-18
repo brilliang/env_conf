@@ -1,4 +1,8 @@
-local bunny_keywords = {"cal", "wp", "chat", "task", "tasks", "diff", "qrt2", "daiquery", "scuba", "v0"}
+local bunny_keywords = {
+    "cal", "wp", "chat", "task", "diff", "qrt2", 
+    "idata", "dai", "daiquery", "scuba", "ods",
+    "v0", "bento", "anp",
+}
 
 local function Set (list)
   local set = {}
@@ -10,11 +14,13 @@ local bk = Set(bunny_keywords)
 
 
 local function is_bunny_search(input)
+    input = input:lower()
     if (
             bk[input] == true
-            or string.match(input, "^[fFtTdDnN]%d+$")
+            or string.match(input, "^[ftdn]%d+$")
             or string.match(input, "^[is]%s%w+")
             or string.match(input, "^.?gbs%s%w+")
+            or string.match(input, "^wut%s%w+")
         ) then
         return true
     end
@@ -71,7 +77,7 @@ hs.hotkey.bind({"ctrl", "cmd"}, "S", function()
         if is_web_url(input) then
             hs.urlevent.openURL(input)
         elseif is_bunny_search(input) then
-            hs.urlevent.openURL("https://our.intern.facebook.com/intern/bunny/?q=" .. urlencode(input))
+            hs.urlevent.openURL("https://www.internalfb.com/intern/bunny/?q=" .. urlencode(input))
         else
             hs.urlevent.openURL("https://www.google.com/search?ie=UTF-8&q=" .. urlencode(input))
         end
