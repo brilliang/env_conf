@@ -2,6 +2,7 @@
 # make sure your git is updated!!
 
 # install oh-my-zsh first
+# add  `-x fwdproxy:8080` to curl command in the DevServer
 [ ! -d $HOME/.oh-my-zsh/ ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
